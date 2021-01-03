@@ -11,3 +11,5 @@ web-build/
 
 # macOS
 .DS_Store
+c/.expo/README.md
+c/.expo/settings.json
