@@ -1,14 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import useColorScheme from './hooks/useColorScheme';
+import useCachedResources from './hooks/useCachedResources';
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
+function App() {
   const colorScheme = useColorScheme();
+  const isLoadingComplete = useCachedResources();
 
   if (!isLoadingComplete) {
     return null;
@@ -21,3 +21,5 @@ export default function App() {
     );
   }
 }
+
+export default App;
