@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RootScreens } from './types';
-import NotFoundScreen from '../../screens/NotFoundScreen';
+import {NotFoundScreen} from '../../screens/notFound';
 import BottomTabNavigator from '../bottomTabNavigator/index';
 import { screenOptions, screenNotFoundOptions, Stack } from './helpers';
 
@@ -14,4 +14,4 @@ function RootNavigator() {
   );
 }
 
-export default RootNavigator;
+export {RootNavigator};

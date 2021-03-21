@@ -1,18 +1,16 @@
-import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
 
-import ProfileScreen from '../../screens/Profile';
-import { ProfileParamList, ProfileScreens } from './types';
-
-const ProfileStack = createStackNavigator<ProfileParamList>();
+import { ProfileStack, screenOptions } from './helpers';
+import { ProfileScreen } from '../../screens/profile';
+import { ProfileScreens } from './types';
 
 function ProfileNavigator() {
   return (
     <ProfileStack.Navigator>
       <ProfileStack.Screen
-        name={ProfileScreens.main}
+        options={screenOptions}
         component={ProfileScreen}
-        options={{ headerTitle: 'Profile' }}
+        name={ProfileScreens.main}
       />
     </ProfileStack.Navigator>
   );

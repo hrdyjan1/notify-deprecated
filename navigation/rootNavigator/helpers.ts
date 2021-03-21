@@ -6,6 +6,7 @@ import { HomePathConfig } from '../homeNavigator/helpers';
 import { BottomTabScreens } from '../bottomTabNavigator/types';
 import { ProfilePathConfig } from '../profileNavigator/helpers';
 
+const RootNotFoundConfig: string | PathConfig = '*';
 const Stack = createStackNavigator<RootStackParamList>();
 const screenOptions: StackNavigationOptions = { headerShown: false };
 const screenNotFoundOptions: StackNavigationOptions = { title: 'Oops!' };
@@ -16,8 +17,6 @@ const RootPathConfig: string | PathConfig = {
     [BottomTabScreens.Profile]: ProfilePathConfig,
   },
 };
-
-const RootNotFoundConfig: string | PathConfig = '*'
 
 const RootPathConfigMap = {
   [RootScreens.Root]: RootPathConfig,

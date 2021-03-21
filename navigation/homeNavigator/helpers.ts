@@ -1,5 +1,9 @@
 import { PathConfig } from '@react-navigation/native';
-import { HomeScreens } from './types';
+import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
+import { HomeParamList, HomeScreens } from './types';
+
+const HomeStack = createStackNavigator<HomeParamList>();
+const screenOptions: StackNavigationOptions = { headerTitle: 'Home' };
 
 const HomePathConfig: PathConfig = {
   screens: {
@@ -7,4 +11,4 @@ const HomePathConfig: PathConfig = {
   },
 };
 
-export { HomePathConfig };
+export { screenOptions, HomePathConfig, HomeStack };

@@ -1,18 +1,16 @@
-import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
 
-import HomeScreen from '../../screens/Home';
-import { HomeParamList, HomeScreens } from './types';
-
-const HomeStack = createStackNavigator<HomeParamList>();
+import { HomeScreen } from '../../screens/home';
+import { HomeScreens } from './types';
+import { HomeStack, screenOptions } from './helpers';
 
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
-        name={HomeScreens.main}
         component={HomeScreen}
-        options={{ headerTitle: 'Home' }}
+        name={HomeScreens.main}
+        options={screenOptions}
       />
     </HomeStack.Navigator>
   );
