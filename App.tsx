@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Navigation from './navigation';
 import useColorScheme from './constants/hooks/useColorScheme';
 import useCachedResources from './constants/hooks/useCachedResources';
+import { Colors } from './constants/template/Colors';
 
 function App() {
   const colorScheme = useColorScheme();
@@ -16,7 +17,7 @@ function App() {
     return (
       <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <StatusBar backgroundColor={Colors.orange} style='dark'/>
       </SafeAreaProvider>
     );
   }

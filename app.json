@@ -4,6 +4,7 @@
     "slug": "notify",
     "version": "1.0.0",
     "orientation": "portrait",
+    "primaryColor": "#ffc107",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",

@@ -33,6 +33,8 @@ const Colors = {
   purple: '#9000E9',
   // 🟨
   yellow: '#E9A400',
+  // 🟧
+  orange: '#ffc107',
   // 🔘
   grey: '#75818B',
 };
