@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { BottomTabScreens } from './types';
 import HomeNavigator from '../homeNavigator';
-import useColorScheme from '../../constants/hooks/useColorScheme';
+import useColorScheme from '../../../constants/hooks/useColorScheme';
 import ProfileNavigator from '../profileNavigator';
 import { BottomTab, getTabBarOptionsFromScheme, getScreenOptions } from './helpers';
 

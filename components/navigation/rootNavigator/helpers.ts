@@ -1,15 +1,14 @@
 import { PathConfig } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
+import { RootNotFoundConfig } from './notFoundHelpers';
 import { RootScreens, RootStackParamList } from './types';
 import { HomePathConfig } from '../homeNavigator/helpers';
 import { BottomTabScreens } from '../bottomTabNavigator/types';
 import { ProfilePathConfig } from '../profileNavigator/helpers';
 
-const RootNotFoundConfig: string | PathConfig = '*';
 const Stack = createStackNavigator<RootStackParamList>();
 const screenOptions: StackNavigationOptions = { headerShown: false };
-const screenNotFoundOptions: StackNavigationOptions = { title: 'Oops!' };
 
 const RootPathConfig: string | PathConfig = {
   screens: {
@@ -23,4 +22,4 @@ const RootPathConfigMap = {
   [RootScreens.NotFound]: RootNotFoundConfig,
 };
 
-export { Stack, RootPathConfigMap, screenNotFoundOptions, screenOptions };
+export { Stack, RootPathConfigMap, screenOptions };

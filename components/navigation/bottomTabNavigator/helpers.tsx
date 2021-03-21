@@ -2,8 +2,8 @@ import React from 'react'
 import { ColorSchemeName } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {Theme} from '../../constants/template/Colors';
-import {TabBarIcon} from '../../components/navigation/tabBarIcon';
+import {Theme} from '../../../constants/template/Colors';
+import {TabBarIcon} from '../tabBarIcon';
 import { BottomTabParamList, BottomTabScreens, OptionsType } from './types';
 
 

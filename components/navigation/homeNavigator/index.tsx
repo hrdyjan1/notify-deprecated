@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeScreen } from '../../screens/home';
+import { HomeScreen } from '../../screen/home';
 import { HomeScreens } from './types';
 import { HomeStack, screenOptions } from './helpers';
 
