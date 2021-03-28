@@ -1,20 +1,42 @@
-import React from 'react'
+import React from 'react';
 import { ColorSchemeName } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabBarOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {Theme} from '../../../constants/template/Colors';
-import {TabBarIcon} from '../tabBarIcon';
+import { Colours, Theme } from '../../../constants/template/Colors';
+import { TabBarIcon } from '../tabBarIcon';
 import { BottomTabParamList, BottomTabScreens, OptionsType } from './types';
+import { IconSize } from '../../../constants/types/icons';
 
+const defaultScreenOptions = {};
 
-function getTabBarOptionsFromScheme(colorScheme: NonNullable<ColorSchemeName>) {
-  return { activeTintColor: Theme[colorScheme].tint };
+function getTabBarOptionsFromScheme(
+  colorScheme: NonNullable<ColorSchemeName>
+): BottomTabBarOptions {
+  return {
+    showLabel: false,
+    inactiveTintColor: Theme[colorScheme].inactiveTint,
+    activeTintColor: Theme[colorScheme].tint,
+    style: {
+      backgroundColor: Colours.orange,
+    },
+  };
 }
 
 function getScreenOptions(screen: BottomTabScreens): OptionsType {
-  return {
-    tabBarIcon: ({ color }) => <TabBarIcon name='ios-code' color={color} />,
-  };
+  switch (screen) {
+    case BottomTabScreens.Home:
+      return {
+        ...defaultScreenOptions,
+        tabBarIcon: ({ color, focused }) => <TabBarIcon name='home' color={color} size={focused ? IconSize.big : IconSize.normal} />,
+      };
+    case BottomTabScreens.Profile:
+      return {
+        ...defaultScreenOptions,
+        tabBarIcon: ({ color, focused }) => <TabBarIcon name='user' color={color} size={focused ? IconSize.big : IconSize.normal} />,
+      };
+    default:
+      return defaultScreenOptions;
+  }
 }
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();

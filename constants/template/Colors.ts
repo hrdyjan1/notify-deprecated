@@ -1,30 +1,10 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
-
-const Theme = {
-  light: {
-    text: '#000',
-    background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#fff',
-    background: '#000',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
-  },
-};
-
-const Colors = {
-  // 🟥
-  red: '#D91f29',
-  // ⬜
+const Colours = {
+  // 🟥 updated
+  red: '#d45769',
+  // ⬜ updated
   white: '#FFFFFF',
-  // 🟦
-  blue: '#205D89',
+  // 🟦 updated
+  blue: '#308695',
   // ⬛
   black: '#000000',
   // 🟩
@@ -33,10 +13,39 @@ const Colors = {
   purple: '#9000E9',
   // 🟨
   yellow: '#E9A400',
-  // 🟧
+  // 🟧 updated
   orange: '#ffc107',
-  // 🔘
-  grey: '#75818B',
+  // 🔘 updated
+  grey: '#d4cfc9',
+  // 🔲 updated
+  greyDark: '#455054',
 };
 
-export { Theme, Colors };
+// 💡 Light
+const tintColorLight = Colours.white;
+const inactiveTintColorLight = Colours.grey;
+
+// 🎩 Dark
+const tintColorDark = Colours.black;
+const inactiveTintColorDark = Colours.grey;
+
+const Theme = {
+  light: {
+    text: Colours.black,
+    background: '#fff',
+    tint: tintColorLight,
+    inactiveTint: inactiveTintColorLight,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorLight,
+  },
+  dark: {
+    text: Colours.grey,
+    background: '#000',
+    tint: tintColorDark,
+    inactiveTint: inactiveTintColorDark,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorDark,
+  },
+};
+
+export { Theme, Colours };

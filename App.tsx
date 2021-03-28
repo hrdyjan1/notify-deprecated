@@ -1,11 +1,12 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StyleSheet, StatusBar } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import Navigation from './components/navigation';
 import useColorScheme from './constants/hooks/useColorScheme';
 import useCachedResources from './constants/hooks/useCachedResources';
-import { Colors } from './constants/template/Colors';
+import { Colours } from './constants/template/Colors';
 
 function App() {
   const colorScheme = useColorScheme();
@@ -16,8 +17,8 @@ function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar backgroundColor={Colors.orange} style='dark'/>
+          <StatusBar backgroundColor={Colours.orange} barStyle='light-content'/>
+          <Navigation colorScheme={colorScheme}/>
       </SafeAreaProvider>
     );
   }
