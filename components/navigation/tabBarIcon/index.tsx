@@ -3,7 +3,8 @@ import { FontAwesome } from '@expo/vector-icons';
 
 import { Sizes } from '../../../constants/template/Sizes';
 import { IconSize } from '../../../constants/types/icons';
-import { isDefined, isNumber } from '../../../constants/helpers/basic';
+import { isDefined} from '../../../constants/helpers/basic';
+import { isNumber } from '../../../constants/helpers/numbers';
 
 const glyphMap = FontAwesome.getRawGlyphMap();
 

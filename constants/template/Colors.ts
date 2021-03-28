@@ -48,4 +48,8 @@ const Theme = {
   },
 };
 
-export { Theme, Colours };
+function generateRandomHexColor() {
+  return '#' + (((1 << 24) * Math.random()) | 0).toString(16);
+}
+
+export { Theme, Colours, generateRandomHexColor };
