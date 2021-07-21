@@ -1,13 +1,16 @@
-import { PathConfig } from '@react-navigation/native';
-import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
+import {PathConfig} from '@react-navigation/native';
+import {
+  createStackNavigator,
+  StackNavigationOptions,
+} from '@react-navigation/stack';
 
-import { HomeParamList, HomeScreens } from './types';
-import { defaultStackScreenOptions } from '../../../constants/navigation';
+import {HomeParamList, HomeScreens} from './types';
+import {defaultStackScreenOptions} from '../../../constants/navigation';
 
 const HomeStack = createStackNavigator<HomeParamList>();
 const screenOptions: StackNavigationOptions = {
-    ...defaultStackScreenOptions,
-    headerTitle: 'Home',
+  ...defaultStackScreenOptions,
+  headerTitle: 'Home',
 };
 
 const HomePathConfig: PathConfig = {
@@ -16,4 +19,4 @@ const HomePathConfig: PathConfig = {
   },
 };
 
-export { screenOptions, HomePathConfig, HomeStack };
+export {screenOptions, HomePathConfig, HomeStack};

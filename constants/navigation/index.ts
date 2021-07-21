@@ -1,7 +1,7 @@
-import { StackNavigationOptions } from '@react-navigation/stack';
-import { FontFamily } from '../helpers/fonts';
-import { Colours } from '../template/Colors';
-import { Sizes } from '../template/Sizes';
+import {StackNavigationOptions} from '@react-navigation/stack';
+import {FontFamily} from '../helpers/fonts';
+import {Colours} from '../template/Colors';
+import {Sizes} from '../template/Sizes';
 
 const defaultStackScreenOptions: StackNavigationOptions = {
   headerTintColor: Colours.white,
@@ -15,4 +15,4 @@ const defaultStackScreenOptions: StackNavigationOptions = {
   },
 };
 
-export { defaultStackScreenOptions };
+export {defaultStackScreenOptions};

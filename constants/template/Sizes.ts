@@ -19,4 +19,4 @@ const Sizes = {
   title: 30,
 };
 
-export { Sizes };
+export {Sizes};

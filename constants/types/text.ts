@@ -3,6 +3,6 @@ export enum TextVariant {
   regular = 'regular',
 }
 
-export type TextVariantProp = {
+export interface TextVariantProp {
   variant?: TextVariant;
-};
+}

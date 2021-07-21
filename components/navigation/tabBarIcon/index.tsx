@@ -1,19 +1,19 @@
 import React from 'react';
-import { FontAwesome } from '@expo/vector-icons';
+import {FontAwesome} from '@expo/vector-icons';
 
-import { Sizes } from '../../../constants/template/Sizes';
-import { IconSize } from '../../../constants/types/icons';
-import { isDefined} from '../../../constants/helpers/basic';
-import { isNumber } from '../../../constants/helpers/numbers';
+import {Sizes} from '../../../constants/template/Sizes';
+import {IconSize} from '../../../constants/types/icons';
+import {isDefined} from '../../../constants/helpers/basic';
+import {isNumber} from '../../../constants/helpers/numbers';
 
 const glyphMap = FontAwesome.getRawGlyphMap();
 
-type Props = {
+interface Props {
   name: keyof typeof glyphMap;
   color: string;
   // Default is 30
   size?: number | IconSize;
-};
+}
 
 function generateIconSize(size?: number | IconSize) {
   if (!isDefined(size) || isNumber(size)) {
@@ -34,8 +34,10 @@ function generateIconSize(size?: number | IconSize) {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon({ color, name, size = Sizes.icon.normal }: Props) {
-  return <FontAwesome size={generateIconSize(size)} name={name} color={color} />;
+function TabBarIcon({color, name, size = Sizes.icon.normal}: Props) {
+  return (
+    <FontAwesome size={generateIconSize(size)} name={name} color={color} />
+  );
 }
 
-export { TabBarIcon };
+export {TabBarIcon};

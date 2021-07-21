@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Template } from '../../common/template';
-import { Home } from './Home';
+import {Template} from '../../common/template';
+import {Home} from './Home';
 
 function HomeScreen() {
   return (
@@ -11,4 +11,4 @@ function HomeScreen() {
   );
 }
 
-export { HomeScreen };
+export {HomeScreen};

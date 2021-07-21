@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {View, Text} from 'react-native';
 
 function Home() {
   return (
@@ -9,4 +9,4 @@ function Home() {
   );
 }
 
-export { Home };
+export {Home};

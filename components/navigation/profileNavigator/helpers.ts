@@ -1,6 +1,9 @@
-import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import { defaultStackScreenOptions } from '../../../constants/navigation';
-import { ProfileParamList, ProfileScreens } from './types';
+import {
+  createStackNavigator,
+  StackNavigationOptions,
+} from '@react-navigation/stack';
+import {defaultStackScreenOptions} from '../../../constants/navigation';
+import {ProfileParamList, ProfileScreens} from './types';
 
 const ProfileStack = createStackNavigator<ProfileParamList>();
 const screenOptions: StackNavigationOptions = {
@@ -14,4 +17,4 @@ const ProfilePathConfig = {
   },
 };
 
-export { screenOptions, ProfilePathConfig, ProfileStack };
+export {screenOptions, ProfilePathConfig, ProfileStack};

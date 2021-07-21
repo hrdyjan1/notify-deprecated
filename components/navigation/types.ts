@@ -1,3 +1,5 @@
-import { ColorSchemeName } from 'react-native';
+import {ColorSchemeName} from 'react-native';
 
-export type NavigationProps = { colorScheme: ColorSchemeName };
+export interface NavigationProps {
+  colorScheme: ColorSchemeName;
+}

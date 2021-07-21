@@ -1,4 +1,4 @@
-export type ThemeProps = {
+export interface ThemeProps {
   lightColor?: string;
   darkColor?: string;
-};
+}

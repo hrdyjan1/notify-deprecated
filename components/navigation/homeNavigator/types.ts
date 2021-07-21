@@ -2,6 +2,6 @@ export enum HomeScreens {
   main = 'main',
 }
 
-export type HomeParamList = {
+export interface HomeParamList {
   [HomeScreens.main]: undefined;
-};
+}

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Box } from '../../common/box';
-import { Template } from '../../common/template';
-import { Typography } from '../../common/typography';
+import {Box} from '../../common/box';
+import {Template} from '../../common/template';
+import {Typography} from '../../common/typography';
 
-import { styles } from './style';
+import {styles} from './style';
 
 function ProfileScreen() {
   return (
@@ -15,4 +15,4 @@ function ProfileScreen() {
   );
 }
 
-export { ProfileScreen };
+export {ProfileScreen};

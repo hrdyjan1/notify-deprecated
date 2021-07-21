@@ -1,7 +1,7 @@
-import { StyleProp, TextStyle } from 'react-native';
+import {StyleProp, TextStyle} from 'react-native';
 
-import { styles } from './style';
-import { TextVariant } from '../../../constants/types/text';
+import {styles} from './style';
+import {TextVariant} from '../../../constants/types/text';
 
 function useVariantStyle(variant?: TextVariant): StyleProp<TextStyle> {
   switch (variant) {
@@ -12,4 +12,4 @@ function useVariantStyle(variant?: TextVariant): StyleProp<TextStyle> {
   }
 }
 
-export { useVariantStyle };
+export {useVariantStyle};

@@ -2,6 +2,6 @@ export enum ProfileScreens {
   main = 'main',
 }
 
-export type ProfileParamList = {
+export interface ProfileParamList {
   [ProfileScreens.main]: undefined;
-};
+}

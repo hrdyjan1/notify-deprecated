@@ -1,4 +1,3 @@
-import { ChildrenProps } from '../../../constants/types/basics';
+import {ChildrenProps} from '../../../constants/types/basics';
 
-export type Props = ChildrenProps
-  
+export type Props = ChildrenProps;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ProfileStack, screenOptions } from './helpers';
-import { ProfileScreen } from '../../screen/profile';
-import { ProfileScreens } from './types';
+import {ProfileStack, screenOptions} from './helpers';
+import {ProfileScreen} from '../../screen/profile';
+import {ProfileScreens} from './types';
 
 function ProfileNavigator() {
   return (

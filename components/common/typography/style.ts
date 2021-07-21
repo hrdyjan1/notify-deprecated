@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { FontFamily } from '../../../constants/helpers/fonts';
+import {StyleSheet} from 'react-native';
+import {FontFamily} from '../../../constants/helpers/fonts';
 
 const styles = StyleSheet.create({
   default: {
@@ -10,4 +10,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { styles };
+export {styles};

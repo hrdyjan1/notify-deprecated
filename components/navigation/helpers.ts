@@ -1,13 +1,13 @@
 import * as Linking from 'expo-linking';
-import { ColorSchemeName } from 'react-native';
+import {ColorSchemeName} from 'react-native';
 import {
   DefaultTheme,
   DarkTheme,
   LinkingOptions as LinkingOptionsType,
 } from '@react-navigation/native';
 
-import { RootScreens } from './rootNavigator/types';
-import { RootPathConfigMap } from './rootNavigator/helpers';
+import {RootScreens} from './rootNavigator/types';
+import {RootPathConfigMap} from './rootNavigator/helpers';
 
 function getColorTheme(colorScheme: ColorSchemeName) {
   return colorScheme === 'dark' ? DarkTheme : DefaultTheme;
@@ -23,4 +23,4 @@ const LinkingOptions: LinkingOptionsType = {
   },
 };
 
-export { LinkingOptions, getColorTheme };
+export {LinkingOptions, getColorTheme};
