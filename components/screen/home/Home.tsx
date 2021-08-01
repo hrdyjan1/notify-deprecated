@@ -1,86 +1,37 @@
-import React, {useCallback, useRef, useMemo} from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import React, {useCallback, useRef} from 'react';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
+import {Backdrop} from '../../common/backdrop';
 
 // variables
-const data = Array(10)
+const snapPoints = [0, '38%', '100%'];
+
+const data = Array(50)
   .fill(0)
   .map((_, index) => `index-${index}`);
 
-const Content = ({handleOnLayoutContent}) => (
-  <View onLayout={handleOnLayoutContent}>
-    {data.map(a => (
-      <Text key={a}>{a}</Text>
-    ))}
-  </View>
-);
-
 const Home = () => {
-  const [contentHeight, setContentHeight] = React.useState<number>(0);
-
-  const maxHeight = useMemo(() => Math.min(contentHeight), [contentHeight]);
-
-  const handleOnLayoutContent = useCallback(
-    ({
-      nativeEvent: {
-        layout: {height},
-      },
-    }) => {
-      setContentHeight(height);
-    },
-    [],
-  );
-
-  const component = <Content handleOnLayoutContent={handleOnLayoutContent} />;
-
-  if (contentHeight !== 0) {
-    return <Inner component={component} maxHeight={maxHeight} />;
-  }
-
-  return component;
-};
-
-const Inner = ({component, maxHeight}) => {
   // hooks
   const sheetRef = useRef<BottomSheet>(null);
 
-  console.log(maxHeight);
-  const snapPoints = useMemo(() => [0, maxHeight], [maxHeight]);
-
-  console.log(maxHeight);
-
   // callbacks
-  const handleSheetChange = useCallback(index => {
-    console.log('handleSheetChange', index);
+  const handeExpand = useCallback(() => {
+    sheetRef.current?.snapTo(1);
   }, []);
-  const handeExpand = useCallback(index => {
-    sheetRef.current?.expand();
-  }, []);
-  const handleClosePress = useCallback(() => {
-    sheetRef.current?.close();
-  }, []);
-
-  //   const handleOnLayoutPage = useCallback(
-  //     ({
-  //       nativeEvent: {
-  //         layout: {height},
-  //       },
-  //     }) => {
-  //       setPageHeight(height);
-  //     },
-  //     [],
-  //   );
 
   return (
     <View style={styles.container}>
-      <Button title="Expand" onPress={handeExpand} />
-      <Button title="Close" onPress={() => handleClosePress()} />
+      <TouchableOpacity onPress={handeExpand} style={styles.button}>
+        <Text>Open</Text>
+      </TouchableOpacity>
       <BottomSheet
         ref={sheetRef}
         snapPoints={snapPoints}
-        onChange={handleSheetChange}>
+        backdropComponent={Backdrop}>
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {component}
+          {data.map(a => (
+            <Text key={a}>{a}</Text>
+          ))}
         </BottomSheetScrollView>
       </BottomSheet>
     </View>
@@ -93,7 +44,14 @@ const styles = StyleSheet.create({
     paddingTop: 200,
   },
   contentContainer: {
-    backgroundColor: 'white',
+    backgroundColor: '#10A5F5',
+    zIndex: 999,
+  },
+  button: {
+    backgroundColor: 'red',
+    padding: 10,
+    borderRadius: 10,
+    margin: 10,
   },
   itemContainer: {
     padding: 6,
