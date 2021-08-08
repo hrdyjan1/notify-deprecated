@@ -1,40 +1,53 @@
-import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
-import React, {useCallback, useRef} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {Backdrop} from '../../common/backdrop';
+import React from 'react';
+import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {useBottomModal} from '../../../constants/hooks/useBottomModal';
+import {ReorderBottomModal} from './components/ReorderBottomModal';
+import {data, ReorderModalSettings, TmpModalSettings} from './helpers';
 import {styles} from './style';
 
-// variables
-const snapPoints = [0, '38%', '100%'];
-
-const data = Array(50)
-  .fill(0)
-  .map((_, index) => `index-${index}`);
-
 const Home = () => {
-  // hooks
-  const sheetRef = useRef<BottomSheet>(null);
-
-  // callbacks
-  const handeExpand = useCallback(() => {
-    sheetRef.current?.snapTo(1);
-  }, []);
+  const reorderModalProps = useBottomModal(ReorderModalSettings);
+  const tmpModalProps = useBottomModal(TmpModalSettings);
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handeExpand} style={styles.button}>
-        <Text>Open</Text>
-      </TouchableOpacity>
-      <BottomSheet
-        ref={sheetRef}
-        snapPoints={snapPoints}
-        backdropComponent={Backdrop}>
-        <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {data.map(a => (
-            <Text key={a}>{a}</Text>
-          ))}
-        </BottomSheetScrollView>
-      </BottomSheet>
+      <View style={styles.headerContainer}>
+        <View style={styles.itemPrimary}>
+          <TouchableOpacity
+            onPress={tmpModalProps.open}
+            style={styles.buttonPrimary}>
+            <Text style={styles.text}>Text</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.itemPrimary}>
+          <TouchableOpacity
+            onPress={tmpModalProps.open}
+            style={styles.buttonPrimary}>
+            <Text style={styles.text}>Text</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <ScrollView contentContainerStyle={styles.scrollingContainer}>
+        {data.map(({text}) => (
+          <View style={styles.item} key={text}>
+            <TouchableOpacity
+              onPress={reorderModalProps.open}
+              style={styles.buttonSecondary}>
+              <Text style={styles.text}>{text}</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </ScrollView>
+      <ReorderBottomModal
+        {...reorderModalProps}
+        onReject={reorderModalProps.close}
+        onAccept={reorderModalProps.close}
+      />
+      <ReorderBottomModal
+        {...tmpModalProps}
+        onReject={tmpModalProps.close}
+        onAccept={tmpModalProps.close}
+      />
     </View>
   );
 };

@@ -1,14 +1,13 @@
-import * as React from 'react';
-
-import {BottomTabScreens} from './types';
-import HomeNavigator from '../homeNavigator';
+import React from 'react';
 import useColorScheme from '../../../constants/hooks/useColorScheme';
+import HomeNavigator from '../homeNavigator';
 import ProfileNavigator from '../profileNavigator';
 import {
   BottomTab,
-  getTabBarOptionsFromScheme,
   getScreenOptions,
+  getTabBarOptionsFromScheme,
 } from './helpers';
+import {BottomTabScreens} from './types';
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();

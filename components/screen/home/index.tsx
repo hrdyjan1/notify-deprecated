@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import React from 'react';
 import {Template} from '../../common/template';
 import {Home} from './Home';
 

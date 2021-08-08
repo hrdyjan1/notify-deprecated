@@ -1,6 +1,10 @@
-export type ChildrenType = React.ReactNode;
-export interface ChildrenProps {
+type ChildrenType = React.ReactNode;
+interface ChildrenProps {
   children: React.ReactNode;
 }
 
-export type StringPromiseVoidFunction = (id: string) => Promise<void>;
+// Functions
+type EmptyFunction = () => void;
+type StringPromiseVoidFunction = (id: string) => Promise<void>;
+
+export {ChildrenType, ChildrenProps, StringPromiseVoidFunction, EmptyFunction};
