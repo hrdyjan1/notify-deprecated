@@ -1,10 +1,9 @@
-import React from 'react';
 import {FontAwesome} from '@expo/vector-icons';
-
-import {Sizes} from '../../../constants/template/Sizes';
-import {IconSize} from '../../../constants/types/icons';
+import React from 'react';
 import {isDefined} from '../../../constants/helpers/basic';
 import {isNumber} from '../../../constants/helpers/numbers';
+import {Sizes} from '../../../constants/template/Sizes';
+import {IconSize} from '../../../constants/types/icons';
 
 const glyphMap = FontAwesome.getRawGlyphMap();
 

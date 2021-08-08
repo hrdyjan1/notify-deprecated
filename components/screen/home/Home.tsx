@@ -1,7 +1,8 @@
-import React, {useCallback, useRef} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
+import React, {useCallback, useRef} from 'react';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {Backdrop} from '../../common/backdrop';
+import {styles} from './style';
 
 // variables
 const snapPoints = [0, '38%', '100%'];
@@ -37,27 +38,5 @@ const Home = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 200,
-  },
-  contentContainer: {
-    backgroundColor: '#10A5F5',
-    zIndex: 999,
-  },
-  button: {
-    backgroundColor: 'red',
-    padding: 10,
-    borderRadius: 10,
-    margin: 10,
-  },
-  itemContainer: {
-    padding: 6,
-    margin: 6,
-    backgroundColor: '#eee',
-  },
-});
 
 export {Home};
